@@ -518,13 +518,13 @@ header .container nav a:hover {
 .content .image {
   width: 100%;
   max-width: 20.6rem;
-  height: 26.7rem;
+  height: 31.7rem;
   display: flex;
   align-items: flex-end; /* independete do tamanho da imagem joga para o final, garantindo o alinhamento dos demais elementos */
   justify-content: center;
   margin-top: -9.6rem;
-  margin-bottom: 0.9rem;
-  padding-bottom: 2.1rem;
+  margin-bottom: -1.5rem;
+  padding-bottom: 2rem;
 }
 
 .info {
@@ -760,5 +760,114 @@ footer .left {
 
   .s-world {
     background-size: cover;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  header .container nav {
+    gap: 2rem;
+  }
+
+  .s-hero .left-text {
+    padding-top: 20rem; /* Ajuste para telas menores */
+  }
+
+  .s-hero .left-text .title h1 {
+    font-size: 8rem; /* Diminuindo o tamanho da fonte */
+  }
+
+  .s-info .content {
+    flex-direction: column; /* Mudar para coluna */
+    align-items: center; /* Centraliza */
+  }
+
+  .s-info .content ul {
+    flex-direction: column; /* Muda para coluna */
+  }
+
+  .s-info .content ul li {
+    padding: 1rem;
+    border: none; /* Remove bordas em telas menores */
+  }
+
+  .s-stories .title h2 {
+    font-size: 30rem; /* Diminuindo o tamanho da fonte */
+  }
+}
+
+@media (max-width: 992px) {
+  header .container {
+    flex-direction: column; /* Coloca o header em coluna */
+    align-items: center; /* Centraliza itens do header */
+  }
+
+  .s-hero .left-text .title h1 {
+    font-size: 6rem; /* Diminuindo ainda mais */
+  }
+
+  .s-hero .left-text p {
+    font-size: 1.4rem; /* Ajustando o texto */
+  }
+
+  .all {
+    grid-template-columns: 1fr; /* Muda para uma coluna */
+  }
+
+  footer .first-area {
+    flex-direction: column; /* Muda para coluna */
+    align-items: center; /* Centraliza itens */
+  }
+
+  .footer-right {
+    align-items: center; /* Centraliza */
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%; /* Diminuindo base font-size */
+  }
+
+  .s-hero {
+    height: 60rem; /* Reduzindo a altura do hero */
+  }
+
+  .s-hero .left-text {
+    padding-top: 15rem; /* Ajuste no padding */
+  }
+
+  .s-info p {
+    font-size: 1.4rem; /* Ajustando o texto */
+  }
+
+  .s-stickers .title h2 {
+    font-size: 20rem; /* Diminuindo tamanho */
+  }
+
+  .s-world .title h2 {
+    font-size: 30rem; /* Diminuindo tamanho */
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-secondary span,
+  .s-world .btn span {
+    font-size: 3rem; /* Ajustando tamanhos dos botões */
+  }
+
+  .info h3 {
+    font-size: 3rem; /* Ajuste no tamanho da fonte */
+  }
+
+  .users ul {
+    flex-direction: column; /* Muda para coluna */
+  }
+
+  .users ul li {
+    margin: 0.5rem 0; /* Ajustando margens */
   }
 }
