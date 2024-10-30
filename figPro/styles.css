@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -38,9 +37,9 @@ a {
   --white: #ffffff;
   --black: #000000;
   --gray-color: #f8f8f8;
+  --light-gray: #9c9c9c;
   --light-color: #868686;
   --primary-color: #1b1b1b;
-  --light-gray: #9c9c9c;
   --dark-gray-color: #787878;
   --secondary-color: #fcc26b;
   --dark-primary-color: #242424;
@@ -57,14 +56,12 @@ html {
 .container {
   width: 100%;
   max-width: 1200px;
-  padding: 0 1.5rem; /* somando com o tamnho, fecha o tamanho do grid */
+  padding: 0 1.5rem;
   margin: 0 auto;
 }
 
-/* HEADER */
-
 header {
-  position: absolute; /* ficará por cima da seção de baixo */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -76,6 +73,10 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+header .menu-icon {
+  display: none;
 }
 
 header .container nav {
@@ -119,14 +120,12 @@ header .container nav a:hover {
   gap: 3rem;
 }
 
-/* HOME */
 .s-hero {
   width: 100%;
   height: 95.3rem;
   position: relative; /* por conta da imagem de fantasma */
   background: url("../assets/bg-hero.png") no-repeat top center;
   background-size: cover; /* garante que ocupe toda a tela */
-
   overflow: hidden; /* adicionar junto do fantasma */
 }
 
@@ -161,7 +160,7 @@ header .container nav a:hover {
 }
 
 .s-hero .left-text p {
-  color: --var(--light-color);
+  color: var(--light-color);
   font-size: 1.6rem;
   line-height: var(--line-height);
   margin-bottom: 4.3rem;
@@ -175,13 +174,13 @@ header .container nav a:hover {
 
 .s-hero .left-text button span {
   color: var(--black);
+  /* borda do texto */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--secondary-color);
   font-family: var(--secondary-font);
   font-size: 4rem;
   letter-spacing: 2px;
 }
-
 .users {
   margin-top: 10.5rem;
   display: flex;
@@ -200,7 +199,6 @@ header .container nav a:hover {
   border-radius: 50%;
   width: 4.7rem;
   height: 4.7rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,17 +316,30 @@ header .container nav a:hover {
   display: flex;
 }
 
+.how-to-use h1 {
+  position: absolute;
+  left: 0;
+  top: 180px;
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  font-size: 8.4rem;
+  color: #c5c5c5;
+  transform: rotate(-90deg) translateX(-16rem); /* Rotaciona o texto 90 graus */
+  transform-origin: center; /* Define o ponto de origem da rotação */
+  white-space: nowrap; /* Impede a quebra de linha */
+}
+
 .how-to-use .container img {
   padding-bottom: 7rem;
-}
-.how-to-use .steps {
-  padding-right: 5.4rem;
+  width: 569px;
+  height: 589px;
 }
 
 .how-to-use .steps ul li strong {
   font-size: 1.8rem;
   line-height: var(--line-height);
   color: var(--primary-color);
+  font-family: "Rock Salt", cursive;
 }
 
 .how-to-use .steps ul li p {
@@ -359,15 +370,6 @@ header .container nav a:hover {
   font-size: 4.6rem;
   font-family: var(--secondary-font);
   letter-spacing: 5%;
-}
-
-.btn-secondary:hover {
-  background-color: black;
-  color: var(--white);
-}
-
-.btn-secondary:hover img {
-  filter: invert(1);
 }
 
 .s-stories {
@@ -408,6 +410,7 @@ header .container nav a:hover {
   align-items: flex-end;
   justify-content: flex-end;
   gap: 5.7rem;
+  position: relative;
   z-index: 1;
   top: -35rem;
 }
@@ -433,7 +436,6 @@ header .container nav a:hover {
   bottom: -33rem;
   right: 2.2rem;
 }
-
 .s-stickers {
   width: 100%;
   background-color: #f8f8f8;
@@ -454,6 +456,7 @@ header .container nav a:hover {
   position: relative;
   display: flex;
   align-items: center;
+  /* gap: 3.8rem; */
   color: var(--dark-primary-color);
   font-size: 15rem;
   font-weight: 400;
@@ -495,7 +498,7 @@ header .container nav a:hover {
 
 .card-sticker {
   width: 100%;
-  max-width: 37.8rem;
+  /*max-width: 37.8rem;*/
   border-radius: 2rem;
   border: 1px solid var(--secondary-color);
   padding: 0.5rem;
@@ -518,13 +521,13 @@ header .container nav a:hover {
 .content .image {
   width: 100%;
   max-width: 20.6rem;
-  height: 31.7rem;
+  height: 26.7rem;
   display: flex;
   align-items: flex-end; /* independete do tamanho da imagem joga para o final, garantindo o alinhamento dos demais elementos */
   justify-content: center;
   margin-top: -9.6rem;
-  margin-bottom: -1.5rem;
-  padding-bottom: 2rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 2.1rem;
 }
 
 .info {
@@ -563,6 +566,7 @@ header .container nav a:hover {
   padding-top: 11.3rem;
   padding-bottom: 13.4rem;
   background: url("assets/bg-world.png") no-repeat bottom center;
+  background-size: cover;
 }
 
 .s-world .container {
@@ -607,14 +611,12 @@ header .container nav a:hover {
 
 .s-world .btn {
   background: var(--secondary-color);
-
   display: flex;
   align-items: center;
   gap: 0.8rem;
 
   margin: 0 auto;
   padding: 0.9rem 3.7rem 0.9rem 5.2rem;
-
   transition: all 0.3s ease;
 }
 
@@ -632,7 +634,6 @@ header .container nav a:hover {
 .s-world .btn:hover img {
   filter: invert(1);
 }
-
 .s-world .ilustra {
   position: absolute;
   z-index: 1;
@@ -717,7 +718,6 @@ footer .left {
   font-size: 1.5rem;
   text-transform: uppercase;
   opacity: 0.8;
-
   transition: all 0.3s ease;
 }
 
@@ -729,7 +729,6 @@ footer .left {
 .second-area {
   border-top: 1px solid #282828;
   margin-top: 4.1rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -743,103 +742,254 @@ footer .left {
   margin-top: 4.1rem;
 }
 
-@media (max-width: 1440px) {
-  .ilustration {
-    right: -20px;
+@media (max-width: 700px) {
+  header .menu-icon {
+    display: block;
   }
 
-  .s-world {
-    background-size: cover;
-  }
-}
-
-@media (max-width: 1650px) {
-  .ilustration {
-    right: -36rem;
+  header .container nav {
+    display: none;
   }
 
-  .s-world {
-    background-size: cover;
-  }
-}
-
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto Mono", monospace;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav a {
-  margin: 0 15px;
-}
-
-.s-hero {
-  display: flex;
-  flex-direction: column;
-}
-
-.left-text {
-  flex: 1;
-}
-
-.ilustration {
-  max-width: 100%;
-  height: auto;
-}
-
-.s-info,
-.how-to-use,
-.s-stories,
-.s-stickers {
-  padding: 20px 0;
-}
-
-.card-sticker {
-  border: 1px solid #ddd;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-@media (min-width: 768px) {
   .s-hero {
-    flex-direction: row;
+    height: auto;
   }
 
-  .left-text {
-    margin-right: 20px;
+  .s-hero .container h1 {
+    text-align: center;
+  }
+  .s-hero .container p {
+    text-align: center;
   }
 
-  .s-stickers {
+  .s-hero .container button {
+    margin: 0 auto;
+  }
+
+  .s-hero .container .users {
+    margin-top: 26.2rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+
+  .s-hero .container .ilustration {
+    height: 39.1rem;
+    right: -13.4rem;
+  }
+
+  .s-info .box {
+    width: 36.1rem;
+    height: auto;
+  }
+
+  .s-info .content {
+    height: auto;
+  }
+
+  .s-info .container p {
+    margin-bottom: 23rem;
+    font-size: 1.3rem;
+  }
+
+  .s-info .content ul {
+    flex-direction: column;
+  }
+
+  .box .content .info-ilustration {
+    height: 26rem;
+    top: -16rem;
+    left: -0.8rem;
+  }
+
+  .s-info .content ul li:first-child {
+    padding: 0;
+    padding-top: 4rem;
+  }
+
+  .s-info .content ul li:not(:first-child) {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.43);
+  }
+
+  .s-info .content ul li:last-child {
+    padding-bottom: 0;
+  }
+
+  .how-to-use .container img {
+    position: absolute;
+    padding-bottom: 0;
+    right: 49px;
+    height: 283px;
+  }
+
+  .how-to-use h1 {
+    padding: 50px;
+    top: 0;
+  }
+
+  .how-to-use .steps .ul-wrapper {
+    padding-top: 40rem;
+    padding-bottom: 8.6rem;
+
+    overflow: hidden;
+    width: 67rem; /* descontando o paddign de 15px de cada lado */
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .how-to-use .steps ul li strong {
+    font-size: 1.4rem;
+  }
+  .how-to-use .steps ul li p {
+    font-size: 1.3rem;
+  }
+
+  .s-stories .title {
+    text-align: center;
+  }
+
+  .title h4 {
+    font-size: 1.6rem;
+  }
+
+  .title h2 {
+    text-align: center;
+    font-size: 14.3rem;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: -10rem;
+  }
+
+  .text .description p {
+    font-size: 1.3rem;
+  }
+
+  .text .description p:not(:last-child) {
+    margin-bottom: 1.3rem;
+  }
+
+  .s-stories .ilustra {
+    width: 24.4rem;
+    height: 38.3rem;
+  }
+  .arrow {
+    left: 58px;
+    transform: rotate(-29deg);
+    bottom: -32rem;
+  }
+
+  .s-stickers .all {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+  .s-world .title {
+    text-align: center;
+    margin-bottom: 5.4rem;
+  }
+
+  .s-stickers .title h2 {
+    font-size: 12rem;
+  }
+
+  .s-stickers .title .subtitle {
+    font-size: 2.5rem;
+  }
+
+  .s-world {
+    background-size: contain;
+  }
+
+  .s-world .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 42rem;
+    height: 84rem;
+  }
+
+  .s-world .title h2 {
+    font-size: 17.2rem;
+    font-weight: 400;
+    margin-bottom: 2.7rem;
+  }
+
+  .s-world .title span {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .s-world p {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .hawk {
+    width: 16.4rem;
+    height: 38.7rem;
+    top: 51.6rem;
+    left: -8px;
+  }
+
+  .tiger {
+    width: 17.5rem;
+    height: 33.8rem;
+    bottom: 0;
+    left: 0;
+  }
+
+  .octopus {
+    width: 14.9rem;
+    height: 38.1rem;
+    top: 56rem;
+    right: 0;
+  }
+
+  .owl {
+    width: 16.8rem;
+    height: 35.4rem;
+    right: 0;
+    bottom: 0.1rem;
+  }
+
+  footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding-top: 4.9rem;
+    padding-bottom: 5.5rem;
+  }
+
+  footer .first-area {
+    text-align: -webkit-center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  footer .first-area .left {
+    padding-bottom: 4rem;
+  }
+
+  .footer-right ul {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 
-  .card-sticker {
-    flex: 1 1 calc(33% - 20px);
+  .footer-right li:not(:first-child) {
+    border-right: 1px solid var(--light-gray);
+    padding-left: 1.6rem;
   }
-}
 
-@media (max-width: 767px) {
-  .card-sticker {
-    flex: 1 1 100%;
+  .footer-right li:last-child {
+    border-right: none;
+  }
+
+  .second-area {
+    flex-direction: column;
   }
 }
